@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Science Gear",
+  "author": "Yokiro",
   "license": "ISC",
   "dependencies": {
     "@discordjs/builders": "^1.6.5",
