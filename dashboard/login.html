@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log-in</title>
+    <link rel="icon" href="https://media.discordapp.net/attachments/1189860785367818330/1202263774506000425/810d828b7f4f7205e963ffb5da1e8487.png?ex=65ccd264&is=65ba5d64&hm=b5996ce71575d508a9d047eaa8fddc2f8f6152423cdf3de0c02906e918870ae1&=&format=webp&quality=lossless" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			transition: background-color 0.5s ease;
+			background-color: white;
+			color: black;
+		}
+
+		body.dark-theme {
+			background-color: black;
+			color: white;
+		}
+
+		body.dark-theme .fas {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<button id="theme-toggle">🌞</button>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form id="login-form" action="/login" method="POST">
+				<img src="img/yokiro_rounder.png">
+				<h2 class="title">Welcom</h2>
+                
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5></h5>
+           		   		<input type="text" class="input" name="username" placeholder="Username" required>
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5></h5>
+           		    	<input type="password" id="password" class="input" name="password" placeholder="Password" required>
+						<i class="fas fa-eye" id="togglePassword"></i>
+            	   </div>
+            	</div>
+            	<div id="error-message" style="color: red; display: none;">Incorrect username or password</div>
+            	<input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+
+	<div class="floating-heart">
+		<i class="fas fa-heart"></i>
+		<div class="tooltip">Made by Yokiro</div>
+	  </div>
+	  
+    <script type="text/javascript" src="js/main.js"></script>
+	<script>
+    // Password showing thing.
+		const togglePassword = document.querySelector('#togglePassword');
+		const password = document.querySelector('#password');
+
+		togglePassword.addEventListener('click', function (e) {
+			const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+			password.setAttribute('type', type);
+			this.classList.toggle('fa-eye-slash');
+		});
+    
+    //Dark them to white them toggle
+		const themeToggle = document.querySelector('#theme-toggle');
+
+		themeToggle.addEventListener('click', function () {
+			document.body.classList.toggle('dark-theme');
+			themeToggle.textContent = document.body.classList.contains('dark-theme') ? '🌞' : '🌜';
+		});
+
+    // Form validation
+		const loginForm = document.querySelector('#login-form');
+		const errorMessage = document.querySelector('#error-message');
+
+		loginForm.addEventListener('submit', function (e) {
+			const username = loginForm.username.value;
+			const password = loginForm.password.value;
+
+			if (!validateCredentials(username, password)) {
+				e.preventDefault();
+				errorMessage.style.display = 'block';
+			} else {
+				errorMessage.style.display = 'none';
+			}
+		});
+
+		function validateCredentials(username, password) {
+			return username === 'user' && password === 'wildsoul!998';
+		}
+	</script>
+</body>
+</html>

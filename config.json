@@ -1,0 +1,24 @@
+{
+  "port": "3000",
+  "clientId": "1201923295218237520",
+  "guildId": "1199714831998140477",
+  "globalDeploy": false,
+  "status": "Yokiro was here!",
+  "website": "https://google.com",
+  "banner": "",
+  "footer": "hello",
+  "genChannel": "1199714971798487080",
+  "premiumChannel": "1199714971798487080",
+  "genCooldown": "1",
+  "premiumCooldown": "1",
+  "color": {
+    "green": "0x57F287",
+    "yellow": "0xFEE75C",
+    "red": "0xED4245",
+    "default": "0x5865F2"
+  },
+  "command": {
+    "notfound_message": true,
+    "error_message": true
+  }
+}
