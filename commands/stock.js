@@ -15,7 +15,7 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setColor(config.color.default)
 			.setTitle(`${interaction.guild.name} Service Stock`)
-			.setDescription(`👋 Hello and welcome to **${interaction.guild.name}**! 🌟 We are here to provide you with the best services. 🚀`)
+			.setDescription(`Made By Yokiro!`)
 			.setFooter(config.footer)
 			.setImage(config.banner);
 
@@ -29,7 +29,7 @@ module.exports = {
 			embed.addField('Premium Services', premiumStockInfo, true);
 		}
 
-		embed.addField('Useful Links', `[**Website**](${config.website}) [**Discord**](https://dsc.gg/sciencegear)`);
+		embed.addField('Useful Links', `[**Website**](${config.website}) [**Discord**]()`);
 
 		interaction.reply({ embeds: [embed] });
 	},
